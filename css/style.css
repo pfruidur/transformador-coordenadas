@@ -1,3 +1,7 @@
+/* 
+Si la pantalla se hace pequeña desaparece. 
+*/
+
 * {
     box-sizing: border-box;
 }
@@ -25,7 +29,7 @@ body {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 20px;
-    text-align: center;
+
 }
 
 .button {
@@ -42,7 +46,6 @@ body {
     background-color: #3e8e41;
 }
 
-/* El texto desaparece si la pantalla es muy chica */
 #transformador {
     display: flex;
     gap: 5em;
@@ -61,6 +64,10 @@ body {
 
 #map{
     height: 600px;
+}
+
+#map:hover{
+    cursor:crosshair;
 }
 
 @media screen and (max-width: 600px) {
