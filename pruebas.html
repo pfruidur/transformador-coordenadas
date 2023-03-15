@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/style.css" rel="stylesheet" type="text/css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="panel">
+            <h2 class="encabezado">Transformador</h2>
+            <div id="transformador">
+                <div id="entrada">
+                    <p>Entrada: <strong id="epsgEntradaTexto">EPSG:4326</strong></p>
+                    <p>Longitud:</p><input type="text" id="entradaX" value="-5.994072"><br>
+                    <p>Latitud:</p><input type="text" id="entradaY" value="37.390618"><br>
+                </div>
+                <div id="salida">
+                    <p>Salida: <select id="opcion">
+                            <option>EPSG:25830</option>
+                            <option>EPSG:25831</option>
+                            <option>EPSG:3034</option>
+                            <option>EPSG:25829</option>
+                        </select></p>
+                    <p>Longitud:</p> <input type="text" id="salidaX" value="">
+                    <p>Latitud:</p> <input type="text" id="salidaY" value="">
+                </div>
+            </div>
+        </div>
+        <button class="button" value="Calcula" onclick="conviertePunto()" ;>Transformar</button>
+        <div class="panel" id="resultado">
+            <h2 class="encabezado">Resultado</h2>
+            <p style="text-align: center;">Aquí aparacerán los resultados.</p>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.8.0/proj4.js"></script>
+    <script type="text/javascript" src="./js/proj4js/defs.js"></script>
+    <script type="text/javascript" src="./js/script.js"></script>
+</body>
+
+</html>
