@@ -18,7 +18,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
 }
 
 .panel {
@@ -46,11 +45,11 @@ body {
     background-color: #3e8e41;
 }
 
-#transformador {
+.transformador {
     display: flex;
     gap: 5em;
     justify-content: center;
-    overflow: hidden;
+    overflow: auto;
 
 }
 
@@ -63,15 +62,11 @@ body {
 }
 
 #map{
-    height: 600px;
+    height: 400px;
+    min-height: 400px;
 }
 
 #map:hover{
     cursor:crosshair;
 }
 
-@media screen and (max-width: 600px) {
-    .panel {
-        width: 90%;
-    }
-}

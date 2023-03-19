@@ -1,7 +1,3 @@
-/* 
-Cambiar theDiv de nombre.
-*/
-
 function conviertePunto() {
     let opcionSelect = document.getElementById("opcion").value;
     let epsgSalida;
@@ -29,9 +25,25 @@ function conviertePunto() {
 
     let textoResultado = `Resultado de la transformación de las coordenadas en <strong>EPSG:4326</strong><br>${coordenadaX}, ${coordenadaY}<br><br>al <strong>${opcionSelect}</strong><br>${pSalida.x}, ${pSalida.y}`;
 
-    let theDiv = document.getElementById("resultado");
+    let divResultado = document.getElementById("resultado");
 
-    theDiv.innerHTML = textoResultado;
+    divResultado.innerHTML = textoResultado;
 
+    console.log(epsgSalida.oProj.ellps)
 
+};
+
+function localizaPunto() {
+
+    var puntoLocalizado = L.layerGroup().addTo(map);
+
+    map.eachLayer((layer) => {
+        if(layer['_latlng']!=undefined)
+            layer.remove();
+    });
+
+    var y = document.getElementById("entradaY").value;
+    var x = document.getElementById("entradaX").value;
+
+    var marker = L.marker([y, x]).addTo(puntoLocalizado)
 }

@@ -6,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css">
-    <link href="./css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
     <title>Transformador de Coordenadas</title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
 </head>
 
 <body>
@@ -15,12 +16,13 @@
     <div class="container">
         <h1 class="encabezado">Transformador</h1>
         <h3 class="encabezado">Pablo Ruiz</h3>
+
         <div class="panel">
-            <div id="transformador">
+            <div class="transformador">
                 <div id="entrada">
                     <p>Entrada: <strong id="epsgEntradaTexto">EPSG:4326</strong></p>
-                    <p>Latitud:</p><input type="text" id="entradaY" value="37.386188818756104"><br>
                     <p>Longitud:</p><input type="text" id="entradaX" value="-5.992615333077015"><br>
+                    <p>Latitud:</p><input type="text" id="entradaY" value="37.386188818756104"><br>
                 </div>
                 <div id="salida">
                     <p>Salida: <select id="opcion">
@@ -29,25 +31,36 @@
                             <option>EPSG:3034</option>
                             <option>EPSG:25829</option>
                         </select></p>
-                    <p>Latitud:</p> <input type="text" id="salidaY" value="">
-                    <p>Longitud:</p> <input type="text" id="salidaX" value="">
+                    <p>Longitud:</p> <input type="text" disabled id="salidaX" value="">
+                    <p>Latitud:</p> <input type="text" disabled id="salidaY" value="">
                 </div>
             </div>
             <p>Puede introducir las coordenadas manualmente o haciendo click en cualquier punto del mapa.</p>
         </div>
-        <button class="button" value="Calcula" onclick="conviertePunto()" ;>Transformar</button>
+
+        <div class="transformador">
+            <button class="button" value="Calcula" onclick="conviertePunto()" ;>Calcula</button>
+            <button class="button" value="Localiza" onclick="localizaPunto()" ;>Localiza</button>
+        </div>
+
         <div class="panel" id="resultado">
             <h2 class="encabezado">Resultado</h2>
-            <p>Aquí aparacerán los resultados.</p>
+            <p>Aquí aparacerá el resultado.</p>
         </div>
         <div class="panel" id="map"></div>
+    </div>
+
+    <div class="footbar">
+
     </div>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.8.0/proj4.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
     <script type="text/javascript" src="./js/proj4js/defs.js"></script>
-    <script type="text/javascript" src="./js/script.js"></script>
     <script type="text/javascript" src="./js/minimap.js"></script>
+    <script type="text/javascript" src="./js/script.js"></script>
+
+
 
 </body>
 
